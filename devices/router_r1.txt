@@ -1,0 +1,22 @@
+Building configuration...
+
+Current configuration : 824 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$A4DAiA6cbNxoV7Y2eEVOA0
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef

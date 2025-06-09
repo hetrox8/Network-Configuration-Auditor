@@ -1,0 +1,25 @@
+- name: Weak Password Encryption
+  pattern: "^enable secret 0"
+  severity: CRITICAL
+  remediation: "Use 'enable secret' with Type 9 (SCRYPT) hashing"
+
+- name: Telnet Enabled
+  pattern: "^transport input telnet"
+  severity: HIGH
+  remediation: "Replace with 'transport input ssh'"
+
+- name: SNMP Default Community
+  pattern: "^snmp-server community (public|private)"
+  severity: CRITICAL
+  remediation: "Use complex community strings and restrict access"
+
+- name: Missing Password Encryption
+  pattern: "^no service password-encryption"
+  severity: MEDIUM
+  remediation: "Enable with 'service password-encryption'"
+
+- name: VTY Lines Without ACL
+  pattern: "^line vty"
+  context: "no access-class"
+  severity: MEDIUM
+  remediation: "Apply an access control list to VTY lines"
